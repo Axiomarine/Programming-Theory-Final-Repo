@@ -5,13 +5,14 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    protected float speed = 5.0f;
+    // ENCAPSULATION
+    protected float speed { get; private set; } = 5.0f; //the variable will be used during overriding
     private float lowerBond = -10.0f;
 
+    // ABSTRACTION
     protected virtual void MoveForward()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * -speed);
-        Debug.Log("Moving");
     }
 
     protected void DestroyOutOfBond()

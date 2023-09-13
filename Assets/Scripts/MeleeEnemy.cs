@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class MeleeEnemy : Enemy
 {
-    private float speedModif = 1.5f;
+    private float speedModif = 1.5f; //speed of the enemy should be increased
     void Awake()
     {
         DestroyOutOfBond();
@@ -15,12 +16,12 @@ public class MeleeEnemy : Enemy
         MoveForward();
     }
 
+    // POLYMORPHISM
     protected override void MoveForward()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * -speed * speedModif);
     }
 
-    // Update is called once per frame
     protected override void AttackPlayer()
     {
         //Collision serves as the attack

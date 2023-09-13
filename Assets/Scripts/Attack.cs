@@ -6,8 +6,9 @@ using UnityEngine.WSA;
 
 public class Attack : MonoBehaviour
 {
-    protected float topBound = 30;
-    protected float speed = 20.0f;
+    // ENCAPSULATION
+    protected float topBound { get; private set; } = 30;
+    protected float speed { get; private set; } = 20.0f;
 
     private int attackDamage = 3;
 
@@ -15,6 +16,8 @@ public class Attack : MonoBehaviour
     {
         ArrowFly();
     }
+
+    // ABSTRACTION
     protected virtual void ArrowFly()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);

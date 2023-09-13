@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Makes enemy get damage from player arrows
 public class EnemyHP : MonoBehaviour
 {
-    public Slider hpSlider;
-    public int fullHp;
+    [SerializeField]
+    private Slider hpSlider;
+
+    [SerializeField]
+    private int fullHp;
+
     private int amountHp;
 
-    // Start is called before the first frame update
     void Start()
     {
         hpSlider.maxValue = fullHp;
@@ -18,6 +22,7 @@ public class EnemyHP : MonoBehaviour
         amountHp = fullHp;
     }
 
+    // ABSTRACTION
     public void GettingDamage(int dmgAmount)
     {
         amountHp -= dmgAmount;

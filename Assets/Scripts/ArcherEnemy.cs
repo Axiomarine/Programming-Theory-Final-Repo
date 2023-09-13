@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
+// INHERITANCE
 public class ArcherEnemy : Enemy
 {
-    public GameObject projectilePrefab;
+    [SerializeField]
+    private GameObject projectilePrefab;
     private float startDelay = 0.5f;
     private float repeatRate = 2.0f;
     void Awake()
@@ -16,10 +19,11 @@ public class ArcherEnemy : Enemy
 
     private void Update()
     {
-        MoveForward();
+        MoveForward(); //moves enemy forward
     }
+    // POLYMORPHISM
     protected override void AttackPlayer()
     {
-        Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation); // shoots arrows
     }
 }

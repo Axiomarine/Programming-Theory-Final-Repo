@@ -10,14 +10,7 @@ public class PlayerController : MonoBehaviour
     public float xRange = 15.0f;
     public float zRange = 15.0f;
     public GameObject projectilePrefab;
-    void UnitMovement()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-
-        verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.forward *  verticalInput * Time.deltaTime * speed);
-    }
+    
 
     private void Update()
     {
@@ -26,6 +19,7 @@ public class PlayerController : MonoBehaviour
         UnitAttack();
     }
 
+    // ABSTRACTION
     void UnitAttack()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -53,5 +47,15 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
         }
+
+    }
+
+    void UnitMovement()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+
+        verticalInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.forward *  verticalInput * Time.deltaTime * speed);
     }
 }

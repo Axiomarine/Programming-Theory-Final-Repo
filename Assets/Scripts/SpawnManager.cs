@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] enemyPrefab;
+    [SerializeField] private GameObject[] enemyPrefab;
+
+    // variables for spawn position
     private float spawnRangeX = 15;
     private float spawnPosZ = 20;
 
+    // variables for spawning intervals
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
 
@@ -16,6 +19,8 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
     }
 
+    // ABSTRACTION
+    // spawns enemy in random location
     void SpawnRandomEnemy()
     {
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0.5f, spawnPosZ);
