@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     public float xRange = 15.0f;
     public float zRange = 15.0f;
     public GameObject projectilePrefab;
-    private Attack attackScript;
     void UnitMovement()
     {
         horizontalInput = Input.GetAxis("Horizontal");
@@ -33,11 +32,6 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(projectilePrefab, transform.position, gameObject.transform.rotation);
         }
-    }
-
-    void UnitGettingDamage()
-    {
-        //calculates health of the unit
     }
 
     void KeepInBound()

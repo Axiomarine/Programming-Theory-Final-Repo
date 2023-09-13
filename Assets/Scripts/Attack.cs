@@ -9,6 +9,8 @@ public class Attack : MonoBehaviour
     private float topBound = 30;
     public float speed = 20.0f;
 
+    private int attackDamage = 3;
+
     private void Update()
     {
         ArrowFly();
@@ -26,7 +28,7 @@ public class Attack : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyHP>().GettingDamage(1);
+            other.GetComponent<EnemyHP>().GettingDamage(attackDamage);
             Destroy(gameObject);
         }
     }
