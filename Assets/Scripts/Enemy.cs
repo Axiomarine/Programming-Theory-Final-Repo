@@ -25,12 +25,12 @@ public abstract class Enemy : MonoBehaviour
 
     protected abstract void AttackPlayer();
 
-    protected void OnCollisionEnter(Collision collision)
+    protected void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             Debug.Log("Player collided with the enemy!!!");
-            Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
 }
