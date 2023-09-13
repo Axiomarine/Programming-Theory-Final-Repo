@@ -15,20 +15,10 @@ public class SpawnManager : MonoBehaviour
     {
         InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
-            int enemyIndex = Random.Range(0, enemyPrefab.Length);
-            Instantiate(enemyPrefab[enemyIndex], spawnPos, enemyPrefab[enemyIndex].transform.rotation);
-        }
-    }
 
     void SpawnRandomEnemy()
     {
-            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
+            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0.5f, spawnPosZ);
             int enemyIndex = Random.Range(0, enemyPrefab.Length);
             Instantiate(enemyPrefab[enemyIndex], spawnPos, enemyPrefab[enemyIndex].transform.rotation);
     }

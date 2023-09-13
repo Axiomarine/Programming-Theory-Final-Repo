@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7462268765030882803}
   - component: {fileID: 2501909623009428426}
   - component: {fileID: 7776155469743920633}
-  - component: {fileID: 1275122052437724340}
   - component: {fileID: -7331312359348041327}
+  - component: {fileID: -1352063346853955010}
   m_Layer: 0
   m_Name: Enemy Shooting
   m_TagString: Enemy
@@ -35,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 9158815042619437928}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7462268765030882803
 MeshFilter:
@@ -108,18 +108,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1275122052437724340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7719014109799128693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a88f1b0b44d1f468eb75e870ff29ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-7331312359348041327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +122,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpSlider: {fileID: 8834918830412493217}
   fullHp: 3
+--- !u!114 &-1352063346853955010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719014109799128693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa870cdd6edb51044b25ece255fbedd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 658471784491381364, guid: 7fb13e0e4beedcd4180ddb67c3025a26, type: 3}
 --- !u!1001 &5752596453747983175
 PrefabInstance:
   m_ObjectHideFlags: 0

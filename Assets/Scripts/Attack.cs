@@ -6,25 +6,25 @@ using UnityEngine.WSA;
 
 public class Attack : MonoBehaviour
 {
-    private float topBound = 30;
-    public float speed = 20.0f;
+    protected float topBound = 30;
+    protected float speed = 20.0f;
 
     private int attackDamage = 3;
 
     private void Update()
     {
         ArrowFly();
+    }
+    protected virtual void ArrowFly()
+    {
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
         if (transform.position.z > topBound)
         {
             Destroy(gameObject);
         }
     }
-    public void ArrowFly()
-    {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
-    }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
