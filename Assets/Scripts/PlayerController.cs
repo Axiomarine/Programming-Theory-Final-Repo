@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
     public float verticalInput;
@@ -20,10 +20,6 @@ public class Unit : MonoBehaviour
         transform.Translate(Vector3.forward *  verticalInput * Time.deltaTime * speed);
     }
 
-    private void Start()
-    {
-
-    }
     private void Update()
     {
         UnitMovement();
